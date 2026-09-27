@@ -1,12 +1,172 @@
+.simulador {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    color: white;
+    text-align: center;
+}
+
 .volver-atomix {
     display: inline-block;
     color: #94a3b8;
     text-decoration: none;
     font-size: 0.85rem;
-    margin-bottom: 16px;
-    transition: color 0.15s ease;
+    margin-bottom: 24px;
+    align-self: flex-start;
+    text-align: left;
 }
 
 .volver-atomix:hover {
     color: #60a5fa;
+}
+
+.simulador-titulo {
+    font-size: 1.8rem;
+    margin: 0 0 8px;
+}
+
+.simulador-descripcion {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0 0 8px;
+}
+
+.simulador-beta {
+    margin: 0 0 24px;
+}
+
+.simulador-beta p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.simulador-beta p:first-child {
+    color: #fbbf24;
+    margin-bottom: 4px;
+}
+
+.simulador-sugeridos {
+    color: #94a3b8;
+}
+
+.simulador-sugeridos strong {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.simulador-selectores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.simulador-selectores select {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.selector-separador {
+    color: #64748b;
+}
+
+.simulador-canvas-wrapper {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.simulador-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.electron-viajero {
+    animation: viajar 1s ease forwards;
+}
+
+@keyframes viajar {
+    from {
+        transform: translateX(-280px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.simulador-controles {
+    margin-bottom: 20px;
+}
+
+.btn-simular, .btn-reset {
+    padding: 10px 28px;
+    border-radius: 24px;
+    border: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-simular {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    color: white;
+}
+
+.btn-simular:disabled {
+    background: #334155;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.btn-reset {
+    background: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+}
+
+.simulador-resultado {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.resultado-no-compatible {
+    color: #fca5a5;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.resultado-pendiente {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.resultado-formula {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.resultado-nombre {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin: 6px 0 0;
+}
+
+.resultado-apodo {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin: 4px 0 0;
 }
