@@ -1,12 +1,306 @@
+.calculadora-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.calculadora {
+    flex: 1;
+    max-width: 560px;
+    color: white;
+}
+
 .volver-atomix {
     display: inline-block;
     color: #94a3b8;
     text-decoration: none;
     font-size: 0.85rem;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     transition: color 0.15s ease;
 }
 
 .volver-atomix:hover {
     color: #60a5fa;
+}
+
+.calculadora-titulo {
+    font-size: 1.8rem;
+    margin: 0 0 8px;
+}
+
+.calculadora-descripcion {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0 0 32px;
+}
+
+.calculadora-selectores {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.selector-grupo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.selector-grupo label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.selector-grupo select {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.selector-grupo select:focus {
+    border-color: #60a5fa;
+}
+
+.selector-separador {
+    font-size: 1.2rem;
+    color: #64748b;
+    padding-bottom: 10px;
+}
+
+.calculadora-valores-individuales {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.valor-individual {
+    flex: 1;
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.valor-individual span {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.valor-individual strong {
+    font-size: 1.3rem;
+}
+
+.calculadora-resultado {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resultado-diferencia {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.resultado-diferencia strong {
+    font-size: 2rem;
+    color: white;
+}
+
+.resultado-tipo {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.resultado-tipo.ionico {
+    background: linear-gradient(90deg, #f87171, #ef4444);
+    color: white;
+}
+
+.resultado-tipo.covalente-polar {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    color: #1e293b;
+}
+
+.resultado-tipo.covalente-no-polar {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    color: white;
+}
+
+.resultado-error {
+    color: #fca5a5;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.calculadora-nota {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.resultado-descripcion {
+    margin: 12px 0 0;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.teoria {
+    width: 425px;
+    flex-shrink: 0;
+    background: #1e293b;
+    border-radius: 14px;
+    padding: 22px;
+    color: white;
+    position: sticky;
+    top: 20px;
+}
+
+.teoria-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #334155;
+}
+
+.teoria-icono {
+    font-size: 1.4rem;
+    background: #334155;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.teoria-header h2 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.teoria-subtitulo {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a78bfa;
+    margin: 2px 0 0;
+}
+
+.teoria-intro {
+    background: #0f172a;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 18px;
+}
+
+.teoria-intro h3 {
+    font-size: 0.8rem;
+    margin: 0 0 6px;
+    color: #c4b5fd;
+}
+
+.teoria-intro p {
+    font-size: 0.78rem;
+    color: #cbd5e1;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.teoria-umbral-titulo {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin: 0 0 10px;
+}
+
+.teoria-umbral {
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-left: 3px solid transparent;
+}
+
+.teoria-umbral-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.teoria-umbral-header strong {
+    font-size: 0.8rem;
+}
+
+.teoria-umbral p {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.teoria-umbral .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.teoria-umbral.covalente-no-polar {
+    background: rgba(52, 211, 153, 0.08);
+    border-left-color: #34d399;
+}
+.teoria-umbral.covalente-no-polar .dot {
+    background: #34d399;
+}
+
+.teoria-umbral.covalente-polar {
+    background: rgba(96, 165, 250, 0.08);
+    border-left-color: #60a5fa;
+}
+.teoria-umbral.covalente-polar .dot {
+    background: #60a5fa;
+}
+
+.teoria-umbral.ionico {
+    background: rgba(244, 114, 182, 0.08);
+    border-left-color: #f472b6;
+}
+.teoria-umbral.ionico .dot {
+    background: #f472b6;
+}
+
+.teoria-dato {
+    background: #0f172a;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 14px;
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    line-height: 1.45;
 }
