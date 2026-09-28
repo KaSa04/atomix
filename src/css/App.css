@@ -1,4 +1,89 @@
+:root {
+    --bg: #f6f5ff;
+    --surface: #ffffff;
+    --surface-alt: #f1efff;
+    --border: #e3e0f7;
+
+    --text: #1e1b4b;
+    --text-muted: #5b5a7a;
+    --text-dim: #8b8aa8;
+
+    --accent: #4f46e5;
+    --accent-2: #9333ea;
+    --accent-3: #db2777;
+    --accent-soft: #ece9ff;
+    --accent-hover: #5a4bd8;
+    --gradient-brand: linear-gradient(90deg, #4f46e5, #a855f7, #ec4899);
+
+    --bond-nonpolar: #059669;
+    --bond-polar: #2563eb;
+    --bond-ionic: #db2777;
+
+    --shadow-card: 0 4px 16px rgba(79, 70, 229, 0.08);
+}
+
 body {
-    background: #0f172a; 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', system-ui, sans-serif;
+}
+
+button, input, select {
+    font-family: inherit;
+}
+
+.pagina-titulo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.pagina-descripcion {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 16px;
+}
+
+.selectores {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.selector-grupo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.selector-grupo label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.selector-grupo select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.selector-grupo select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.selector-separador {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    padding-bottom: 10px;
 }

@@ -25,7 +25,7 @@ function AtomDiagram({ elemento, shells, centroX, centroY, carga, colorNucleo = 
                     cy={centroY}
                     r={radioBase + i * espacioEntreCapas}
                     fill="none"
-                    stroke="#334155"
+                    stroke="#4c4a8a"
                     strokeWidth="1"
                 />
             ))}

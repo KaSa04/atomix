@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { data } from '../services/data';
 import '../css/Calculator.css';
 
@@ -41,14 +40,12 @@ function Calculator() {
     return (
         <div className="calculadora-layout">
             <div className="calculadora">
-                <Link to="/" className="volver-atomix">← Back to Atomix</Link>
-
-                <h1 className="calculadora-titulo">Electronegativity Calculator</h1>
-                <p className="calculadora-descripcion">
+                <h1 className="pagina-titulo">Electronegativity Calculator</h1>
+                <p className="pagina-descripcion">
                     Pick two elements to find their electronegativity difference and predicted bond type.
                 </p>
 
-                <div className="calculadora-selectores">
+                <div className="selectores">
                     <div className="selector-grupo">
                         <label htmlFor="elemento1">First element</label>
                         <select

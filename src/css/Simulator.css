@@ -1,91 +1,203 @@
 .simulador {
-    max-width: 700px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 24px;
-    color: white;
-    text-align: center;
+    padding: 32px 24px;
 }
 
-.volver-atomix {
-    display: inline-block;
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-bottom: 24px;
-    align-self: flex-start;
-    text-align: left;
+.simulador-layout {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+    margin-top: 8px;
 }
 
-.volver-atomix:hover {
-    color: #60a5fa;
+.simulador-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow-card);
 }
 
-.simulador-titulo {
-    font-size: 1.8rem;
-    margin: 0 0 8px;
-}
-
-.simulador-descripcion {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin: 0 0 8px;
-}
-
-.simulador-beta {
-    margin: 0 0 24px;
-}
-
-.simulador-beta p {
+.panel-titulo {
+    font-size: 1rem;
+    font-weight: 800;
     margin: 0;
-    font-size: 0.75rem;
 }
 
-.simulador-beta p:first-child {
-    color: #fbbf24;
+.panel-selectores {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ejemplos-etiqueta {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.ejemplos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ejemplo-chip {
+    border: 1px solid var(--border);
+    background: var(--surface-alt);
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.ejemplo-chip:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+.estado {
+    border-radius: 14px;
+    padding: 12px 14px;
+}
+
+.estado.ok {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.estado.no {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.estado-etiqueta {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     margin-bottom: 4px;
 }
 
-.simulador-sugeridos {
-    color: #94a3b8;
+.estado.ok .estado-etiqueta {
+    color: #047857;
 }
 
-.simulador-sugeridos strong {
-    color: #60a5fa;
-    font-weight: 600;
+.estado.no .estado-etiqueta {
+    color: #b91c1c;
 }
 
-.simulador-selectores {
+.estado p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.resultado-formula {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.estado .resultado-nombre {
+    font-weight: 700;
+}
+
+.estado .resultado-apodo {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.simulador-controles {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 8px;
 }
 
-.simulador-selectores select {
-    background: #1e293b;
-    border: 1px solid #334155;
-    color: white;
-    padding: 10px 12px;
-    border-radius: 8px;
+.btn-simular,
+.btn-reset {
+    flex: 1;
+    padding: 12px 24px;
+    border-radius: 0.8rem;
+    border: none;
+    font-weight: 800;
     font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.15s ease;
 }
 
-.selector-separador {
-    color: #64748b;
+.btn-simular {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 6px 16px rgba(109, 94, 240, 0.3);
 }
 
-.simulador-canvas-wrapper {
-    background: #0f172a;
+.btn-simular:hover:not(:disabled) {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-simular:disabled {
+    background: var(--surface-alt);
+    color: var(--text-dim);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.btn-reset {
+    background: var(--surface-alt);
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+.simulador-beta {
+    margin: 0;
+    padding: 10px 12px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
     border-radius: 12px;
-    padding: 10px;
-    margin-bottom: 20px;
+    font-size: 0.72rem;
+    color: #92400e;
+    line-height: 1.4;
+}
+
+.simulador-canvas {
+    background-color: #1e1b4b;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 18px 18px;
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 12px 32px rgba(30, 27, 75, 0.25);
 }
 
 .simulador-svg {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.simulador-pista {
+    margin: 8px 0 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #c7d2fe;
 }
 
 .electron-viajero {
@@ -101,72 +213,8 @@
     }
 }
 
-.simulador-controles {
-    margin-bottom: 20px;
-}
-
-.btn-simular, .btn-reset {
-    padding: 10px 28px;
-    border-radius: 24px;
-    border: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-.btn-simular {
-    background: linear-gradient(90deg, #60a5fa, #a78bfa);
-    color: white;
-}
-
-.btn-simular:disabled {
-    background: #334155;
-    color: #64748b;
-    cursor: not-allowed;
-}
-
-.btn-reset {
-    background: #1e293b;
-    color: white;
-    border: 1px solid #334155;
-}
-
-.simulador-resultado {
-    background: #1e293b;
-    border-radius: 12px;
-    padding: 20px;
-}
-
-.resultado-no-compatible {
-    color: #fca5a5;
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-.resultado-pendiente {
-    color: #94a3b8;
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-.resultado-formula {
-    font-size: 2rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.resultado-nombre {
-    color: #cbd5e1;
-    font-size: 0.9rem;
-    margin: 6px 0 0;
-}
-
-.resultado-apodo {
-    color: #94a3b8;
-    font-size: 0.8rem;
-    font-style: italic;
-    margin: 4px 0 0;
+@media (max-width: 900px) {
+    .simulador-layout {
+        grid-template-columns: 1fr;
+    }
 }

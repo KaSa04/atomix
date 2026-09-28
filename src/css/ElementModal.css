@@ -1,7 +1,7 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(30, 27, 75, 0.55);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,80 +10,94 @@
 }
 
 .modal-content {
-    background: #1e293b;
-    border-radius: 7px;
+    position: relative;
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 20px;
     width: 90%;
-    max-width: 480px;
+    max-width: 580px;
     max-height: 85vh;
     overflow-y: auto;
-    color: white;
-    position: relative;
+    box-shadow: 0 20px 50px rgba(30, 27, 75, 0.35);
     animation: aparecer 0.25s ease-out;
 
-    /* Firefox */
     scrollbar-width: thin;
-    scrollbar-color: #60a5fa #0f172a;
+    scrollbar-color: var(--accent) var(--surface-alt);
 }
 
-/* Chrome, Safari, Edge (basados en Chromium) */
 .modal-content::-webkit-scrollbar {
     width: 8px;
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background: #0f172a;
-    border-radius: 0 12px 12px 0;
+    background: var(--surface-alt);
+    border-radius: 0 20px 20px 0;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-    background: #60a5fa;
+    background: var(--accent);
     border-radius: 10px;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-    background: #93c5fd;
+    background: var(--accent-2);
 }
 
 .modal-cerrar {
     position: absolute;
-    top: 10px;
-    right: 14px;
-    background: none;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
     border: none;
-    color: white;
-    font-size: 1.8rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--text);
+    font-size: 1.3rem;
     line-height: 1;
     cursor: pointer;
     z-index: 1;
+    transition: background 0.15s ease;
+}
+
+.modal-cerrar:hover {
+    background: white;
 }
 
 .modal-header {
+    position: relative;
     text-align: center;
-    padding: 20px;
-    border-radius: 12px 12px 0 0;
-    color: black;
+    padding: 28px 20px 20px;
+    border-radius: 20px 20px 0 0;
+    color: #1e1b4b;
 }
 
 .modal-numero {
     position: absolute;
-    top: 15px;
-    left: 22px;
+    top: 14px;
+    left: 18px;
     font-size: 1.3rem;
+    font-weight: 800;
 }
 
 .modal-simbolo {
     font-size: 3rem;
+    font-weight: 800;
     margin: 0;
+    color: inherit;
 }
 
 .modal-nombre {
     margin: 4px 0 0;
+    font-weight: 800;
+    color: inherit;
 }
 
 .modal-categoria {
     margin: 4px 0 0;
     font-size: 0.85rem;
     font-style: italic;
+    color: inherit;
 }
 
 .modal-body {
@@ -94,52 +108,57 @@
     width: 100%;
     max-height: 180px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 12px;
+    background: var(--surface-alt);
     margin-bottom: 12px;
 }
 
 .modal-resumen {
     font-size: 0.85rem;
-    line-height: 1.4;
-    color: #cbd5e1;
-    margin-bottom: 16px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0 0 16px;
 }
 
 .modal-datos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
 }
 
 .dato {
     display: flex;
     flex-direction: column;
-    background: #0f172a;
-    padding: 6px 10px;
-    border-radius: 6px;
+    background: var(--surface-alt);
+    padding: 8px 12px;
+    border-radius: 10px;
 }
 
 .dato span {
     font-size: 0.65rem;
-    color: #94a3b8;
+    font-weight: 700;
+    color: var(--text-dim);
 }
 
 .dato strong {
     font-size: 0.85rem;
+    color: var(--text);
+    overflow-wrap: anywhere;
 }
 
 .modal-shells {
     margin-top: 14px;
     font-size: 0.8rem;
-    color: #cbd5e1;
+    color: var(--text-muted);
 }
 
 .modal-fuente {
     display: inline-block;
     margin-top: 16px;
-    color: #60a5fa;
+    color: var(--accent);
     text-decoration: none;
     font-size: 0.85rem;
+    font-weight: 800;
 }
 
 .modal-fuente:hover {
@@ -154,4 +173,61 @@
 @keyframes aparecer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-detalles {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.modal-detalles summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: rgb(81, 78, 78);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background 0.15s ease;
+}
+
+.modal-detalles summary::-webkit-details-marker {
+    display: none;
+}
+
+.modal-detalles summary:hover {
+    background: var(--accent-soft);
+}
+
+.modal-detalles summary::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.2s ease, margin 0.2s ease;
+}
+
+.modal-detalles[open] summary {
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-detalles[open] summary::after {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+}
+
+.modal-detalles-contenido {
+    padding: 14px;
+}
+
+.modal-detalles-contenido .modal-shells {
+    margin-top: 12px;
 }

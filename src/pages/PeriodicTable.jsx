@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
 import { data } from '../services/data';
 import ElementModal from '../components/ElementModal';
 import Leyenda from "../components/Legend";
@@ -48,7 +47,8 @@ function PeriodicTable() {
         <div className="container">
 
             <aside className="sidebar">
-                <Link to="/" className="volver-atomix">← Back to Atomix</Link>
+                <h1 className="pagina-titulo">Periodic Table</h1>
+                <p className="pagina-descripcion">Check out the 118 elements of the periodic table. Click any element to learn about it.</p>
                 <input
                     type="text"
                     className="buscador"

@@ -18,7 +18,7 @@
     aspect-ratio: 1/1;
     min-height: 44px;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -112,25 +112,26 @@
 }
 
 .buscador {
-    width: 230px;
+    width: 260px;
     max-width: 90%;
-    padding: 8px 14px;
+    padding: 10px 16px;
     margin: 12px 0;
-    border-radius: 10px;
-    border: 1px solid #334155;
-    background: #1e293b;
-    color: white;
-    font-size: 0.8rem;
+    border-radius: 0.7rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.9rem;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .buscador:focus {
-    border-color: #4c80bf;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .buscador::placeholder {
-    color: #64748b;
+    color: var(--text-dim);
 }
 
 .element-card.atenuado {
@@ -167,17 +168,4 @@
 .tabla-wrapper {
     flex: 1;
     overflow-x: auto;
-}
-
-.volver-atomix {
-    display: inline-block;
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-bottom: 16px;
-    transition: color 0.15s ease;
-}
-
-.volver-atomix:hover {
-    color: #60a5fa;
 }

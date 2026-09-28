@@ -1,8 +1,7 @@
 .landing {
-    min-height: 100vh;
-    padding: 60px 24px;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 56px 24px 32px;
 }
 
 .landing-hero {
@@ -10,22 +9,57 @@
     margin-bottom: 56px;
 }
 
-.landing-titulo {
-    font-size: 3rem;
+.landing-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.7rem;
     font-weight: 800;
-    margin: 0;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.landing-titulo {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 720px;
+    margin: 20px auto 0;
+}
+
+.landing-marca {
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
 .landing-descripcion {
+    max-width: 520px;
+    margin: 18px auto 0;
+    color: var(--text-muted);
     font-size: 1rem;
-    color: #94a3b8;
-    max-width: 500px;
-    margin: 16px auto 0;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.landing-boton {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 32px;
+    border-radius: 0.75rem;
+    background: var(--accent);
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(109, 94, 240, 0.35);
+    transition: all 0.15s ease;
+}
+
+.landing-boton:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
 .landing-cards {
@@ -35,43 +69,89 @@
 }
 
 .landing-card {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    padding: 32px 24px;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    color: white;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 16px 16px 22px;
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+    transition: all 0.2s ease;
+    animation: subir 0.4s ease backwards;
 }
 
 .landing-card:hover {
-    border-color: #4c80bf;
     transform: translateY(-4px);
+    border-color: var(--card-color);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--card-color) 22%, transparent);
 }
 
 .landing-card-icono {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    border-radius: 14px;
+    font-size: 2.6rem;
+    background: color-mix(in srgb, var(--card-color) 14%, white);
+    margin-bottom: 6px;
 }
 
 .landing-card-titulo {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin: 4px 4px 0;
+    transition: color 0.2s ease;
+}
+
+.landing-card:hover .landing-card-titulo {
+    color: var(--card-color);
 }
 
 .landing-card-descripcion {
     font-size: 0.85rem;
-    color: #94a3b8;
-    line-height: 1.4;
-    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0 4px;
+}
+
+.landing-card-cta {
+    margin: auto 4px 0;
+    padding-top: 8px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--card-color);
+}
+
+.landing-footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 800px) {
     .landing-cards {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landing-card {
+        animation: none;
     }
 }
