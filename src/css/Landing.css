@@ -96,7 +96,7 @@
     height: 110px;
     border-radius: 14px;
     font-size: 2.6rem;
-    background: color-mix(in srgb, var(--card-color) 14%, white);
+    background: color-mix(in srgb, var(--card-color) 14%, var(--surface));
     margin-bottom: 6px;
 }
 
@@ -153,5 +153,22 @@
 @media (prefers-reduced-motion: reduce) {
     .landing-card {
         animation: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .selectores {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .selector-separador {
+        text-align: center;
+        padding-bottom: 0;
+    }
+
+    .pagina-titulo {
+        font-size: 1.5rem;
     }
 }

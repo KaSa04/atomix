@@ -25,6 +25,7 @@
     border-radius: 14px;
     padding: 12px;
     text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .valor-individual span {
@@ -37,6 +38,7 @@
 
 .valor-individual strong {
     font-size: 1.4rem;
+    color: var(--text);
 }
 
 .calculadora-resultado {
@@ -47,6 +49,7 @@
     text-align: center;
     margin-bottom: 20px;
     box-shadow: var(--shadow-card);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .resultado-diferencia {
@@ -92,7 +95,7 @@
 }
 
 .resultado-error {
-    color: #b91c1c;
+    color: #ef4444;
     font-size: 0.9rem;
     margin: 0;
 }
@@ -114,6 +117,8 @@
     box-shadow: var(--shadow-card);
     position: sticky;
     top: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .teoria-header {
@@ -141,6 +146,7 @@
     font-size: 1rem;
     font-weight: 800;
     margin: 0;
+    color: var(--text);
 }
 
 .teoria-subtitulo {
@@ -157,6 +163,7 @@
     border-radius: 14px;
     padding: 14px;
     margin-bottom: 18px;
+    transition: background-color 0.3s ease;
 }
 
 .teoria-intro h3 {
@@ -198,6 +205,7 @@
 
 .teoria-umbral-header strong {
     font-size: 0.82rem;
+    color: var(--text);
 }
 
 .teoria-umbral p {
@@ -215,7 +223,7 @@
 }
 
 .teoria-umbral.covalente-no-polar {
-    background: rgba(5, 150, 105, 0.08);
+    background: color-mix(in srgb, var(--bond-nonpolar) 12%, transparent);
     border-left-color: var(--bond-nonpolar);
 }
 .teoria-umbral.covalente-no-polar .dot {
@@ -223,7 +231,7 @@
 }
 
 .teoria-umbral.covalente-polar {
-    background: rgba(37, 99, 235, 0.08);
+    background: color-mix(in srgb, var(--bond-polar) 12%, transparent);
     border-left-color: var(--bond-polar);
 }
 .teoria-umbral.covalente-polar .dot {
@@ -231,7 +239,7 @@
 }
 
 .teoria-umbral.ionico {
-    background: rgba(219, 39, 119, 0.08);
+    background: color-mix(in srgb, var(--bond-ionic) 12%, transparent);
     border-left-color: var(--bond-ionic);
 }
 .teoria-umbral.ionico .dot {
@@ -246,15 +254,57 @@
     font-size: 0.76rem;
     color: var(--text-muted);
     line-height: 1.45;
+    transition: background-color 0.3s ease;
 }
 
 @media (max-width: 900px) {
     .calculadora-layout {
         flex-direction: column;
+        align-items: stretch;
+        padding: 24px 16px;
+    }
+
+    .calculadora {
+        max-width: none;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .teoria {
-        width: 100%;
+        width: 100%; 
+        max-width: 100%;
         position: static;
+        box-sizing: border-box;
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculadora-valores-individuales {
+        gap: 10px;
+    }
+
+    .calculadora-resultado {
+        padding: 18px;
+    }
+
+    .resultado-diferencia strong {
+        font-size: 1.8rem;
+    }
+
+    .teoria-header {
+        gap: 10px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+    }
+
+    .teoria-icono {
+        width: 34px;
+        height: 34px;
+        font-size: 1.15rem;
+    }
+
+    .teoria-umbral {
+        padding: 10px 12px;
     }
 }

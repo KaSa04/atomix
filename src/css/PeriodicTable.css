@@ -1,5 +1,5 @@
 .periodic-table {
-    color: black;
+    color: var(--text);
     display: grid;
     grid-template-columns: repeat(18, minmax(30px, 1fr));
     grid-template-rows: repeat(8, 1fr);
@@ -12,19 +12,20 @@
     font-size: 0.6rem;
     align-self: flex-start; 
     line-height: 1;
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .element-card {
     aspect-ratio: 1/1;
     min-height: 44px;
     padding: 5px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    color: black;
+    color: #1e1b4b; /* Texto oscuro fijo para contraste óptimo sobre los colores de categorías */
     overflow: hidden;
     padding: 2px;
     box-sizing: border-box;
@@ -48,67 +49,62 @@
     white-space: nowrap; 
     width: 100%;
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
+    color: rgba(0, 0, 0, 0.85);
 }
 
 .noble {
-  background: #f3d2e8;
   background: linear-gradient(60deg, #f3d2e8, #e40c9c);
 }
 
 .alkali {
-  background: #f88379;
   background: linear-gradient(60deg, #e9b2ad, #f11b07);
 }
 
 .alkaline {
-  background: #ffc3a0;
   background: linear-gradient(60deg, #ffc3a0, #eb5d0b);
 }
 
 .transition {
-  background: #e9ff08;
   background: linear-gradient(60deg, #e9ff08, #e2b00a);
 }
 
 .polyatomic {
-  background: #a3d2d5;
   background: linear-gradient(60deg, #a3d2d5, #148088);
 }
 
-.diatomic{
-  background: #a3d5bf;
+.diatomic {
   background: linear-gradient(60deg, #a3d5bf, #39a576);
 }
 
 .post-transition {
-  background: #8eb1e7;
   background: linear-gradient(60deg, #8eb1e7, #0960e4);
 }
 
 .metalloid {
-  background: #5ed89c;
   background: linear-gradient(90deg, #5ed89c, #15864e);
 }
 
 .lanthanide {
-  background: #c9f;
   background: linear-gradient(90deg, #c9f, rgb(108, 13, 202));
 }
 
 .actinide {
-  background: #ad87bd;
   background: linear-gradient(90deg, #ad87bd, #ad1deb);
 }
 
 .unknown\, {
-  background: #cff;
   background: linear-gradient(90deg, #cff, rgb(13, 173, 173));
 }
 
 .element-card:hover {
-    background: black;
-    color: #fff;
+    background: var(--text);
+    color: var(--surface);
+}
+
+.element-card:hover .element-number,
+.element-card:hover .element-name {
+    color: var(--surface);
 }
 
 .buscador {
@@ -161,11 +157,49 @@
 
 .descripcion {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-top: 4px;
 }
 
 .tabla-wrapper {
     flex: 1;
     overflow-x: auto;
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .buscador {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sidebar .leyenda {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .sidebar .leyenda-item {
+        width: auto;
+    }
+
+    .tabla-wrapper::before {
+        content: 'Swipe sideways to see the whole table →';
+        display: block;
+        font-size: 0.75rem;
+        color: var(--text-dim);
+        margin-bottom: 6px;
+    }
 }
